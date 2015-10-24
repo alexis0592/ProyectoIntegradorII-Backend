@@ -1,26 +1,23 @@
 {
   "name": "ubicame-udea",
-  "version": "0.1.1",
-  "description": "Proyecto Integrador II",
+  "version": "1.0.0",
+  "description": "Proyecto Integrador II UdeA",
   "main": "main.js",
   "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "ejs": "2.3.3",
-    "express": "4.13.3"
-  },
-  "engines": {
-    "node": "0.12.2"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexis0592/ProyectoIntegradorII-Backend"
+    "url": "https://github.com/alexis0592/ProyectoIntegradorII-Backend.git"
   },
   "keywords": [
-    "node",
-    "heroku",
-    "express"
+    "Node",
+    "Js"
   ],
-  "license": "MIT"
+  "author": "Yefry Calderon, Cristian Correa, Daniela Serna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexis0592/ProyectoIntegradorII-Backend/issues"
+  },
+  "homepage": "https://github.com/alexis0592/ProyectoIntegradorII-Backend"
 }
