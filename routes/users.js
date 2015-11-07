@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var bloqueModel = require('../models/BloqueModel')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+	bloqueModel.findBloque(function(response){
+		res.send(response);
 });
+	});
+  	
 
 module.exports = router;

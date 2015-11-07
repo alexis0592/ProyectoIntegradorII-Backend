@@ -5,10 +5,23 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
 
+var URI_STRING_BD = 'mongodb://localhost/test'
+
+mongoose.connect(URI_STRING_BD, function(err, res){
+
+  if(err){
+    console.log('Error al conectarse con la BD Mongo');
+  }else{
+    console.log('Se conecto exitosamente a la Base de datos ' + URI_STRING_BD);
+  }
+
+});
+
+var models = require('./models/BloqueModel');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
 
 var app = express();
 
