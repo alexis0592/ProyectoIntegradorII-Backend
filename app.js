@@ -5,10 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-<<<<<<< HEAD
-=======
-//mongoose.connect('mongodb://localhost/test');
->>>>>>> 0cbdd9d4214a286a09cacfc7c36ff5a849581522
 
 var URI_STRING_BD = 'mongodb://localhost/test'
 
