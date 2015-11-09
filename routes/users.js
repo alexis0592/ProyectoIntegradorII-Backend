@@ -6,8 +6,8 @@ var bloqueModel = require('../models/BloqueModel')
 router.get('/', function(req, res, next) {
 	bloqueModel.findBloque(function(response){
 		res.send(response);
-});
 	});
+});
   	
 
 module.exports = router;
