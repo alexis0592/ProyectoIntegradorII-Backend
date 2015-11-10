@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+//url de conexión con la Base de Datos
 var URI_STRING_BD = 'mongodb://localhost/test'
 
 mongoose.connect(URI_STRING_BD, function(err, res){
