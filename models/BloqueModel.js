@@ -14,11 +14,11 @@ var b1 = new bloqueModel({
 	bloque : {numero_bloque : '1'}
 });
 
-/*b1.save(function (err){
+b1.save(function (err){
 	if (!err) {
 		console.log('Guardo el dato exitosamente');
 	};
-});*/
+});
 
 
 exports.findBloque = function(callback){
