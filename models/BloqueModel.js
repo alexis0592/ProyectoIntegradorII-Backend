@@ -9,7 +9,6 @@ var bloqueSchema = new mongoose.Schema({
 
 var bloqueModel = mongoose.model('Bloque', bloqueSchema);
 
-
 var b1 = new bloqueModel({
 	bloque : {numero_bloque : '1'}
 });
@@ -20,7 +19,6 @@ b1.save(function (err){
 		console.log('Guardo el dato exitosamente');
 	};
 });*/
-
 
 exports.findBloque = function(callback){
 	bloqueModel.find({'bloque.numero_bloque': '1'}).exec(function(err, result){

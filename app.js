@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 //url de conexión con la Base de Datos
-//var URI_STRING_BD = 'mongodb://localhost/test'
+var URI_STRING_BD = 'mongodb://localhost/test'
 
-var URI_STRING_BD = 'mongodb://ubicame:ubicame@ds035674.mongolab.com:35674/heroku_5325wfzs'
+//var URI_STRING_BD = 'mongodb://ubicame:ubicame@ds035674.mongolab.com:35674/heroku_5325wfzs'
 
 
 mongoose.connect(URI_STRING_BD, function(err, res){
@@ -26,7 +26,8 @@ var models = require('./models/BloqueModel');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var bloques = require('./routes/bloques');
-
+var tipoUnidad = require('./routes/tipoUnidad');
+var unidadRoute = require('./routes/unidadRoute');
 
 var app = express();
 
@@ -45,6 +46,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/bloques', bloques);
+app.use('/tipoUnidad', tipoUnidad);
+app.use('/unidad', unidadRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
