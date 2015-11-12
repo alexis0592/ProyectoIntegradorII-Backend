@@ -25,6 +25,7 @@ mongoose.connect(URI_STRING_BD, function(err, res){
 var models = require('./models/BloqueModel');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var bloques = require('./routes/bloques');
 
 
 var app = express();
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/bloques', bloques);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

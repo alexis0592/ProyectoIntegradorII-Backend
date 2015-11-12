@@ -29,5 +29,5 @@ exports.findBloque = function(callback){
 		}else{
 			console.log(err);
 		}
-});
+	});
 }
