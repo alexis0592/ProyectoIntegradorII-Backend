@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 //url de conexión con la Base de Datos
-var URI_STRING_BD = 'mongodb://localhost/test'
+//var URI_STRING_BD = 'mongodb://localhost/test'
 
-//var URI_STRING_BD = 'mongodb://ubicame:ubicame@ds035674.mongolab.com:35674/heroku_5325wfzs'
+var URI_STRING_BD = 'mongodb://ubicame:ubicame@ds035674.mongolab.com:35674/heroku_5325wfzs'
 
 
 mongoose.connect(URI_STRING_BD, function(err, res){
