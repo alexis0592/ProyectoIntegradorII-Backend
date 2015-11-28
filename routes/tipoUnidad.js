@@ -10,4 +10,11 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+/*Guardar un tipo de unidad*/
+router.post('/save', function(req, res){
+	var tipoUnidadName = req.param('name');
+	modelTipoUnidad.saveTipoUnidad(tipoUnidadName);
+	res.send("Exito");
+});
+
 module.exports = router;

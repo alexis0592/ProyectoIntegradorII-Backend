@@ -7,9 +7,9 @@ var bloqueSchema = new mongoose.Schema({
 	}
 });
 
-var bloqueModel = mongoose.model('Bloque', bloqueSchema);
+var BloqueModel = mongoose.model('Bloque', bloqueSchema);
 
-var b1 = new bloqueModel({
+var b1 = new BloqueModel({
 	bloque : {numero_bloque : '1'}
 });
 

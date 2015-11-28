@@ -26,3 +26,15 @@ exports.findTipoUnidad = function(callback){
 		}
 	});
 }
+
+exports.saveTipoUnidad = function(tipoUnidad){
+	var tipoUnidadToSave = new tipoUnidadModel({
+		nombre: tipoUnidad
+	});
+
+	tipoUnidadToSave.save(function(err){
+		if(!err){
+			console.log('Se guardo el datos TipoUnidad Exitosamente');
+		}
+	});
+}
