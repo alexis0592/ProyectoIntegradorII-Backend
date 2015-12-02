@@ -10,15 +10,10 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-//Función para buscar un bloque, pasarle parametro
-exports.findBloque = function(callback){
-	Bloque.bloqueModel.find({'bloque.numero_bloque': '1'}).exec(function(err, result){
-		if(!err){
-			callback(result);
-		}else{
-			console.log(err);
-		}
-	});
-}
+router.post('save', function(req, res, next){
+	var numBloq = req.param('numero');
+	Bloque.save(numBloq);
+	res.send('Exito');
+})
 
 module.exports = router;

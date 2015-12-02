@@ -4,14 +4,15 @@ var tipoUnidadModel = require('./TipoUnidadModel')
 
 var unidadSchema = new mongoose.Schema({
 	nombre: String,
-	tipoUnidad: {type: Schema.ObjectId, ref: 'TipoUnidadModel'}
+	tipoUnidad: {type: mongoose.Schema.ObjectId, ref: 'TipoUnidadModel'}
 });
 
 var UnidadModel = mongoose.model('Unidad', unidadSchema);
 
-var unidad = new UnidadModel({
+/*var unidad = new UnidadModel({
 	nombre: 'Departamento Ingeniería'
-});
+	tipoUnidad: {nombre:'565a07e0b8e9761100050344'}
+});*/
 
 /*unidad.save(function (err){
 	if (!err) {

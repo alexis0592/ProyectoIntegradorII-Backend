@@ -2,9 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var bloqueSchema = new mongoose.Schema({
-	bloque:{
-		numero_bloque :  String
-	}
+	numero_bloque :  String
 });
 
 var BloqueModel = mongoose.model('Bloque', bloqueSchema);
@@ -12,6 +10,18 @@ var BloqueModel = mongoose.model('Bloque', bloqueSchema);
 var b1 = new BloqueModel({
 	bloque : {numero_bloque : '1'}
 });
+
+exports.saveBloque = function(numBloque){
+	var bloqueToSave = new BloqueModel({
+		bloque: numBloque
+	});
+
+	bloqueToSave.save(function(err){
+		if(!err){
+			console.log('Se guardo el Bloque Exitosamente');
+		}
+	});
+}
 
 /*
 b1.save(function (err){
