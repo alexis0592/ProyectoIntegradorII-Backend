@@ -7,6 +7,8 @@ var userSchema = new Schema({
 	password:{type:String, required:true},
 	created_at: Date,
 	updated_at:Date
+},{
+	versionKey: false
 });
 
 var User = mongoose.model('User', userSchema);

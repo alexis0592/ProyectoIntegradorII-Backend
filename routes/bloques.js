@@ -10,9 +10,9 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-router.post('save', function(req, res, next){
+router.post('/save', function(req, res, next){
 	var numBloq = req.param('numero');
-	Bloque.save(numBloq);
+	Bloque.saveBloque(numBloq);
 	res.send('Exito');
 })
 

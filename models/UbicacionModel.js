@@ -11,6 +11,8 @@ var ubicacionSchema = new mongoose.Schema({
 	longitud:Number,
 	departamento_id: {type: mongoose.Schema.ObjectId, ref: 'DepartamentoModel'},
 	unidad_id: {type: mongoose.Schema.ObjectId, ref: 'UnidadModel'}
+},{
+	versionKey: false
 });
 
 var Ubicacion = mongoose.model('Ubicacion', ubicacionSchema);

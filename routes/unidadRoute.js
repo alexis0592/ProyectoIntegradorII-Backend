@@ -10,4 +10,12 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.post('/save', function(req, res, next) {
+	var name = req.param('name');
+	var tipoUnidadId = req.param('tipoUnidadId');
+
+	modelUnidad.saveUnidad(name, tipoUnidadId);
+	res.send('Exito');
+});
+
 module.exports = router;

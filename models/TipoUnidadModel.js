@@ -3,6 +3,8 @@ var Schema = mongoose.Schema;
 
 var tipoUnidadSchema = new mongoose.Schema({
 	nombre: String
+},{
+	versionKey: false
 });
 
 var tipoUnidadModel = mongoose.model('TipoUnidad', tipoUnidadSchema);
