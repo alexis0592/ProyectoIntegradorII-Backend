@@ -9,9 +9,11 @@ var unidadSchema = new mongoose.Schema({
 	versionKey: false
 });
 
+//Variable que representa el esquema Unidad en Mongoose
 var UnidadModel = mongoose.model('Unidad', unidadSchema);
 
-exports.saveUnidad = function(name, tipoUnidadId){
+//Metodo para guardar una unidad en la base de datos
+exports.saveUnidad = function(name, tipoUnidadId, callback){
 	var unidadToSave = new UnidadModel({
 		nombre: name,
 		tipoUnidad:{_id:tipoUnidadId}
@@ -20,23 +22,12 @@ exports.saveUnidad = function(name, tipoUnidadId){
 	unidadToSave.save(function(err){
 		if(!err){
 			console.log('Se guardo el dato Unidad Exitosamente');
+			callback('Exito desde el modelo');
 		}
 	});
 }
 
-/*var unidad = new UnidadModel({
-	nombre: 'Departamento Ingeniería'
-	tipoUnidad: {nombre:'565a07e0b8e9761100050344'}
-});*/
-
-/*unidad.save(function (err){
-	if (!err) {
-		console.log('Guardo la unidad el dato exitosamente');
-	}else{
-		console.log('Jodido');
-	};
-});*/
-
+//Metodo para encontrar todas las unidades existentes en la Base de Datos
 exports.findUnidad = function(callback){
 	UnidadModel.find({}).populate('tipoUnidad').exec(function(err, result){
 		if(!err){
@@ -46,3 +37,15 @@ exports.findUnidad = function(callback){
 		}
 	});
 }
+
+//Metodo para encontrar todas las unidades, dado el tipo de Unidad 
+exports.findUnidadByTipo = function(idTipo, callback){
+	UnidadModel.find({tipoUnidad:idTipo}).populate('tipoUnidad').exec(function(err, result){
+		if(!err){
+			callback(result);
+		}else{
+			callback(err);
+		}
+	})
+}
+
