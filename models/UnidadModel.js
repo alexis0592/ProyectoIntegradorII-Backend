@@ -4,7 +4,7 @@ var tipoUnidadModel = require('./TipoUnidadModel')
 
 var unidadSchema = new mongoose.Schema({
 	nombre: String,
-	tipoUnidad: {type: mongoose.Schema.ObjectId, ref: 'TipoUnidadModel'}
+	tipoUnidad: {type: mongoose.Schema.ObjectId, ref: 'TipoUnidad'}
 },{
 	versionKey: false
 });
@@ -38,7 +38,7 @@ exports.saveUnidad = function(name, tipoUnidadId){
 });*/
 
 exports.findUnidad = function(callback){
-	UnidadModel.find({}).exec(function(err, result){
+	UnidadModel.find({}).populate('tipoUnidad').exec(function(err, result){
 		if(!err){
 			callback(result);
 		}else{
