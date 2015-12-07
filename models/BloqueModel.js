@@ -12,16 +12,21 @@ var BloqueModel = mongoose.model('Bloque', bloqueSchema);
 
 //Metodo para almacenar un bloque en la base de datos
 //numBloque: numero de bloque a almacenar
-exports.saveBloque = function(numBloque){
+exports.saveBloque = function(numBloque, callback){
 	var bloqueToSave = new BloqueModel({
 		numero_bloque: numBloque
 	});
 
-	bloqueToSave.save(function(err){
-		if(!err){
-			console.log('Se guardo el Bloque Exitosamente');
-		}
-	});
+	if(numBloque != ''){
+		bloqueToSave.save(function(err){
+			if(!err){
+				callback('Success');
+			}
+		});
+	}else{
+		callback('Failure');
+	}
+	
 }
 
 exports.updateBloque = function(bloqueId, numBloqueToUpdate, callback){
