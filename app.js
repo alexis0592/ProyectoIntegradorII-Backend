@@ -28,6 +28,7 @@ var users = require('./routes/users');
 var bloques = require('./routes/bloques');
 var tipoUnidad = require('./routes/tipoUnidad');
 var unidadRoute = require('./routes/unidadRoute');
+var routeDepartment = require('./routes/departmentRoute');
 
 var app = express();
 
@@ -48,7 +49,9 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/bloques', bloques);
 app.use('/tipounidad', tipoUnidad);
+app.use('/departamento', routeDepartment);
 app.use('/unidad', unidadRoute);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
