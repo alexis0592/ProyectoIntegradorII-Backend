@@ -29,6 +29,7 @@ var bloques = require('./routes/bloques');
 var tipoUnidad = require('./routes/tipoUnidad');
 var unidadRoute = require('./routes/unidadRoute');
 var routeDepartment = require('./routes/departmentRoute');
+var ubicationRoute = require('./routes/ubicationRoute');
 
 var app = express();
 
@@ -51,6 +52,7 @@ app.use('/bloques', bloques);
 app.use('/tipounidad', tipoUnidad);
 app.use('/departamento', routeDepartment);
 app.use('/unidad', unidadRoute);
+app.use('/ubicacion', ubicationRoute);
 
 
 // catch 404 and forward to error handler

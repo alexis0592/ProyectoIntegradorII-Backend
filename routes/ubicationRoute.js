@@ -18,6 +18,10 @@ router.post('/save', function(req, res, next) {
 	var idDepartment = req.param('departamentoId');
 	var idUnidad = req.param('unidadId');
 
-	modelUnidad.saveUnidad(name, tipoUnidadId);
-	res.send('Exito');
+	ubication.saveUbicacion(idBloque, office, lat, lng, idDepartment, idUnidad, function(response){
+		res.send(response);
+	});
+	
 });
+
+module.exports = router;

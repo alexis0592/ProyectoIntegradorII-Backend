@@ -23,6 +23,18 @@ exports.saveTipoUnidad = function(tipoUnidad){
 	});
 }
 
+exports.deleteTipoUnidad = function(idTipoUnidad, callback){
+
+	tipoUnidadModel.findById(idTipoUnidad, function(err, tipoUnidad){
+		if(err) throw err;
+
+		tipoUnidad.remove(function(err){
+			if(err) throw err;
+			callback('Success');
+		});
+	});
+}
+
 //Funcion para retornar todas los tipos de unidad existentes en la BD
 exports.findTipoUnidad = function(callback){
 	tipoUnidadModel.find({}).exec(function(err, result){

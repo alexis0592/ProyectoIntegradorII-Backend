@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var Bloque = mongoose.model('BloqueModel');
-var Departamento = mongoose.model('DepartamentoModel');
-var Unidad = mongoose.model('UnidadModel');
+var Bloque = mongoose.model('Bloque');
+var Departamento = mongoose.model('Departamento');
+var Unidad = mongoose.model('Unidad');
 
 var ubicacionSchema = new mongoose.Schema({
 	bloque_id: {type: mongoose.Schema.ObjectId, ref:'Bloque'},
@@ -17,7 +17,7 @@ var ubicacionSchema = new mongoose.Schema({
 
 var Ubicacion = mongoose.model('Ubicacion', ubicacionSchema);
 
-exports.saveUbicacion = function(idBloque, office, lat, lng, idDepartment, idUnit){
+exports.saveUbicacion = function(idBloque, office, lat, lng, idDepartment, idUnit, callback){
 	var ubicacionToSave = new Ubicacion({
 		bloque_id: {_id:idBloque},
 		oficina: office,
@@ -29,7 +29,9 @@ exports.saveUbicacion = function(idBloque, office, lat, lng, idDepartment, idUni
 
 	ubicacionToSave.save(function(err){
 		if(!err){
-			console.log('Se guardo la Ubicacion Exitosamente');
+			callback('Se guardo la Ubicacion Exitosamente');
+		}else{
+			callback('Failure');
 		}
 	});
 }
