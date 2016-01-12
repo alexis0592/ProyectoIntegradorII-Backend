@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
 
 //SAVE:Ruta que invoca el m&eacute;todo para almacenar un bloque en la base de datos
 router.post('/:numero', function(req, res, next){
-	var numBloq = req.param['numero'];
+	//var numBloq = req.param['numero'];
+	var numBloq = req.params.numero;
 	Bloque.saveBloque(numBloq, function(response){
 		res.send(response);	
 	});
@@ -21,8 +22,8 @@ router.post('/:numero', function(req, res, next){
 
 //UPDATE:Ruta que invoca el m&eacute;todo para actualizar un bloque en la base de datos
 router.put('/:bloqueId/:numBloque', function(req, res, next){
-	var idBloq = req.param['bloqueId'];
-	var bloqNum = req.param['numBloque'];
+	var idBloq = req.params.bloqueId;
+	var bloqNum = req.params.numBloque;
 
 	Bloque.updateBloque(idBloq, bloqNum, function(response){
 		res.send(response);
@@ -32,7 +33,7 @@ router.put('/:bloqueId/:numBloque', function(req, res, next){
 
 //DELETE:Ruta que invoca el m&eacute;todo para eliminar un bloque de la Base de datos
 router.delete('/:idbloque', function(req, res, next){
-	var idBloq = req.params['idbloque'];
+	var idBloq = req.params.idbloque;
 	Bloque.deleteBloque(idBloq, function(response){
 		res.send(response);
 	});

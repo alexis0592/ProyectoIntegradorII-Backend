@@ -49,3 +49,17 @@ exports.findUbicacion = function(callback){
 		}
 	});
 }
+
+exports.findUbicationByBloqAndOffice = function(bloq,offic,callback){
+	Ubicacion.find({bloque_id:bloq, oficina:offic})
+	.populate('bloque_id')
+	.populate('departamento_id')
+	.populate('unidad_id')
+	.exec(function(err, result){
+		if(!err){
+			callback(result);
+		}else{
+			console.log(err);
+		}
+	});
+}

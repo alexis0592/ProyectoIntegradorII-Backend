@@ -24,4 +24,14 @@ router.post('/save', function(req, res, next) {
 	
 });
 
+router.get('/:bloq/:offic', function(req, res, next){
+	var bloq = req.params.bloq;
+	var offic = req.params.offic;
+	ubication.findUbicationByBloqAndOffice(bloq,offic, function(response){
+		
+		res.send(response);
+	})
+
+});
+
 module.exports = router;
